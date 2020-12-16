@@ -1,0 +1,25 @@
+<div class="col-md-12">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of Employee">
+                <td>{{emp.fname}}</td>
+                <td>{{emp.lname}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phoneNumber}}</td>
+                <td>
+                    <a routerLink="/edit-employee/{{emp._id}}">Edit</a>
+                    <a class="ml-3 cursor" (click)="deleteEmployee(emp._id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
